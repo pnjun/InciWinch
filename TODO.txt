@@ -1,0 +1,38 @@
+PLANE SIDE:
+* Arduino
+* Power supply
+* Understand LX RS232 Connection Protocol
+
+
+
+WINCH SIDE:
+* Raspi
+* Power supply
+* Touch Screen for Raspi
+
+
+RADIO:
+XBee:
+https://www.sparkfun.com/pages/xbee_guide
+
+https://www.sparkfun.com/products/8742   (1.6Km range - 60mW)
+
+Maybe this is good:
+
+http://www.instructables.com/id/Long-Range-18km-Arduino-to-Arduino-Wireless-Commun/
+
+and
+
+https://www.banggood.com/HC-12-433-SI4463-Wireless-Serial-Module-Remote-1000M-With-Antenna-p-973522.html?p=FA25224129409201603Q&cur_warehouse=UK
+
+but max 1km range
+
+
+OR:
+Semtech SX1276
+
+Arduino driver: https://github.com/sandeepmistry/arduino-LoRa
+Raspi driver:   https://github.com/mayeranalytics/pySX127x
+
+Overview
+https://www.cooking-hacks.com/documentation/tutorials/extreme-range-lora-sx1272-module-shield-arduino-raspberry-pi-intel-galileo/
