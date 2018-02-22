@@ -12,27 +12,23 @@ WINCH SIDE:
 
 
 RADIO:
-XBee:
-https://www.sparkfun.com/pages/xbee_guide
+xBee product list:
+https://www.digi.com/pdf/chart_xbee_rf_features.pdf
 
-https://www.sparkfun.com/products/8742   (1.6Km range - 60mW)
+xBee to buy:
+https://www.mouser.de/productdetail/?qs=3VJ0tGt%252bi1yn7YuDTTgmmg==
 
-Maybe this is good:
+xBee introduction (french):
+http://jeromeabel.net/ressources/xbee-arduino
 
-http://www.instructables.com/id/Long-Range-18km-Arduino-to-Arduino-Wireless-Commun/
+xBee star network arduino tutorial:
+http://reso-nance.org/wiki/materiel/xbee/star/en
 
-and
+xBee libraries (arduino and python):
+http://docs.digi.com/display/XBeeArduinoCodingPlatform/Using+a+library+with+XBees
 
-https://www.banggood.com/HC-12-433-SI4463-Wireless-Serial-Module-Remote-1000M-With-Antenna-p-973522.html?p=FA25224129409201603Q&cur_warehouse=UK
+zigBee manual:
+https://www.digi.com/resources/documentation/digidocs/pdfs/90002002.pdf
 
-but max 1km range
-
-
-OR:
-Semtech SX1276
-
-Arduino driver: https://github.com/sandeepmistry/arduino-LoRa
-Raspi driver:   https://github.com/mayeranalytics/pySX127x
-
-Overview
-https://www.cooking-hacks.com/documentation/tutorials/extreme-range-lora-sx1272-module-shield-arduino-raspberry-pi-intel-galileo/
+xBee setup:
+https://www.digi.com/support/forum/5411/help-with-star-network-set-up-with-10-xbee-end-devices
