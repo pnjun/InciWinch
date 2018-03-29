@@ -4,11 +4,9 @@
 #ifdef MICRONMEA_DEBUG
 #include <stdlib.h>
 #include <iostream>
-#include <microNMEA_gcc.h>
 using namespace std;
-#elif
-#include <MicroNMEA.h>
 #endif
+
 
 static long exp10(uint8_t b)
 {

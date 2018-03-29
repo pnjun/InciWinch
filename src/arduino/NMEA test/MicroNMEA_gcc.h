@@ -27,11 +27,6 @@ public:
   static const char* generateChecksum(const char* s, char* checksum);
   static bool testChecksum(const char* s);
 
-  // Write MicroNMEA sentence to oputput stream. Sentence must start with
-  // '$', the checksum and <CR><NL> terminators will be appended
-  // automatically.
-  static Stream& sendSentence(Stream &s, const char* sentence);
-
   // Object with no buffer allocated, must call setBuffer later
   MicroNMEA(void);
 

@@ -1,6 +1,6 @@
 #define MICRONMEA_DEBUG
 
-#include <microNMEA_gcc.h>
+#include "MicroNMEA.cpp"
 
 int main()
 {
