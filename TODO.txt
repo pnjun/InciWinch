@@ -4,6 +4,12 @@ PLANE SIDE:
 * Understand LX RS232 Connection Protocol
 
 
+NMEA:
+LX setup: page 19 of LX 5000 manual
+
+nmea strings info:
+http://www.gpsinformation.org/dale/nmea.htm
+
 
 WINCH SIDE:
 * Raspi
