@@ -33,6 +33,16 @@
 #:import MDBottomNavigation kivymd.tabs.MDBottomNavigation
 #:import MDBottomNavigationItem kivymd.tabs.MDBottomNavigationItem
 
+<LaunchTab@MDTab>:
+    icon: 'checkbox-blank-circle'
+
+    MDLabel:
+        font_style: 'Body1'
+        theme_text_color: 'Primary'
+        text: "Launch data here"
+        halign: 'center'
+
+
 NavigationLayout:
     id: nav_layout
     MDNavigationDrawer:
@@ -65,50 +75,42 @@ NavigationLayout:
             Screen:
                 name: 'Launches'
                 MDTabbedPanel:
-                    id: tab_panel
+                    id: launchList
                     tab_display_mode:'text'
 
-                    MDTab:
-                        name: 'music'
-                        text: "Music" # Why are these not set!!!
-                        icon: "playlist-play"
-                        MDLabel:
-                            font_style: 'Body1'
-                            theme_text_color: 'Primary'
-                            text: "Here is my music list :)"
-                            halign: 'center'
-                    MDTab:
-                        name: 'movies'
-                        text: 'Movies'
-                        icon: "movie"
+                    LaunchTab:
+                        text: 'asdf'
 
-                        MDLabel:
-                            font_style: 'Body1'
-                            theme_text_color: 'Primary'
-                            text: "Show movies here :)"
-                            halign: 'center'
+                    LaunchTab:
+                        text: 'dfssdf'
+
+                    LaunchTab:
+                        text: '1235'
+
+                    LaunchTab:
+                        text: 'j5tv'
+
+
             Screen:
                 name: 'Settings'
                 ScrollView:
                     do_scroll_x: False
                     MDList:
-                        id: ml
-                        OneLineListItem:
-                            text: "One-line item"
+                        id: settingsList
                         TwoLineListItem:
-                            text: "Two-line item"
-                            secondary_text: "Secondary text here"
-                        ThreeLineListItem:
-                            text: "Three-line item"
-                            secondary_text: "This is a multi-line label where you can fit more text than usual"
+                            id: serialPort
+                            text: "Serial Port"
+                            secondary_text: "Click to select"
+                        OneLineListItem:
+                            text: "Some setting"
                         OneLineIconListItem:
-                            text: "Single-line item with left icon"
+                            text: "Some setting"
                         TwoLineIconListItem:
-                            text: "Two-line item..."
-                            secondary_text: "...with left icon"
+                            text: "Some setting"
+                            secondary_text: "Some setting"
                         ThreeLineIconListItem:
-                            text: "Three-line item..."
-                            secondary_text: "...with left icon..." + '\\n' + "and third line!"
+                            text: "TSome setting"
+                            secondary_text: "Some setting" + '\\n' + "Some setting"
             Screen:
                 name: 'About'
                 MDLabel:

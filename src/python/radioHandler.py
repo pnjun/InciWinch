@@ -1,21 +1,15 @@
 import serial
 import time
+from tornado import ioloop, gen
 from xbee import ZigBee
 
-PORT = "/dev/tty.usbserial-DN03FTBY" #change the port if you are not using Windows to whatever port you are using
 BAUD_RATE = 9600
-serial = serial.Serial(PORT, BAUD_RATE)
 
-# Create API object
-xb = ZigBee(serial)
+class RadioHandler:
+    def __init__(self, serialPort):
+        self.port = serial.Serial(serialPort, BAUD_RATE)
+        xb = ZigBee(self.port, callback=self._recvCallback)
 
-# Continuously read and print packets
-while True:
-    try:
-        response = xb.wait_read_frame()
-
-        print("\nPacket received at %s : %s" %(time.time(), response))
-
-    except KeyboardInterrupt:
-        serial.close()
-        break
+    def _recvCallback(self, data):
+        print('af')
+        print(data)
