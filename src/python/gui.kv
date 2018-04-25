@@ -33,10 +33,11 @@
 #:import MDBottomNavigation kivymd.tabs.MDBottomNavigation
 #:import MDBottomNavigationItem kivymd.tabs.MDBottomNavigationItem
 
-<LaunchTab@MDTab>:
+<Launch>:
     icon: 'checkbox-blank-circle'
 
     MDLabel:
+        id: launchText
         font_style: 'Body1'
         theme_text_color: 'Primary'
         text: "Launch data here"
@@ -75,20 +76,11 @@ NavigationLayout:
             Screen:
                 name: 'Launches'
                 MDTabbedPanel:
-                    id: launchList
+                    id: tab_panel
                     tab_display_mode:'text'
 
-                    LaunchTab:
-                        text: 'asdf'
-
-                    LaunchTab:
-                        text: 'dfssdf'
-
-                    LaunchTab:
-                        text: '1235'
-
-                    LaunchTab:
-                        text: 'j5tv'
+                    Launch:
+                        text: 'TESTTAB'
 
 
             Screen:
@@ -102,7 +94,7 @@ NavigationLayout:
                             text: "Serial Port"
                             secondary_text: "Click to select"
                         OneLineListItem:
-                            text: "Some setting"
+                            text: "Device List"
                         OneLineIconListItem:
                             text: "Some setting"
                         TwoLineIconListItem:
