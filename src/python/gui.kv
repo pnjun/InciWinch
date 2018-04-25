@@ -35,13 +35,28 @@
 
 <Launch>:
     icon: 'checkbox-blank-circle'
+    BoxLayout:
+        orientation: 'vertical'
+        MDLabel:
+            id: launchTitle
+            font_style: 'Title'
+            theme_text_color: 'Primary'
+            text: "Launch data here"
+            halign: 'center'
 
-    MDLabel:
-        id: launchText
-        font_style: 'Body1'
-        theme_text_color: 'Primary'
-        text: "Launch data here"
-        halign: 'center'
+        MDLabel:
+            id: IASDisplay
+            font_style: 'Display3'
+            theme_text_color: 'Primary'
+            text: "IAS here"
+            halign: 'center'
+
+        MDLabel:
+            id: HeightDisplay
+            font_style: 'Display3'
+            theme_text_color: 'Primary'
+            text: "Height here"
+            halign: 'center'
 
 
 NavigationLayout:
@@ -76,11 +91,16 @@ NavigationLayout:
             Screen:
                 name: 'Launches'
                 MDTabbedPanel:
-                    id: tab_panel
+                    id: launchList
                     tab_display_mode:'text'
 
                     Launch:
-                        text: 'TESTTAB'
+                        name: 'asf'
+                        text: 'fakeLaunch'
+
+                    Launch:
+                        name: 'asf2'
+                        text: 'fakeLaunch2'
 
 
             Screen:

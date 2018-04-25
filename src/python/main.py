@@ -12,9 +12,9 @@ from kivy.properties import ObjectProperty
 from kivymd.theming import ThemeManager
 from kivymd.tabs import MDTab
 
-class Launch(MDTab):
-    source = ObjectProperty(None)
 
+class Launch(MDTab):
+    pass
 
 class InciWinchApp(App):
     theme_cls = ThemeManager()
@@ -41,7 +41,9 @@ class InciWinchApp(App):
         self.radio.halt()
 
     def updateLaunch(self,launch, frame):
-        launch.ids.launchText.text = str(frame)
+        launch.ids.launchTitle.text    = frame.source + "  " + str(frame.time)
+        launch.ids.IASDisplay.text     = "IAS = " + str(frame.IAS)
+        launch.ids.HeightDisplay.text  = "HEIGHT = " + str(frame.height)
 
     #This function is called from the xBee thread, do not call from GUI thread
     def radioCallback(self, data):
@@ -57,18 +59,17 @@ class InciWinchApp(App):
         while not self.radioFrames.empty():
             frame = self.radioFrames.get(block=False)
 
-
-            #TODO: **************** FIX THIS SHIT **********************
             tablist = self.root.ids.launchList.ids.tab_manager.screens
 
             #Search if there is already a matching launch, if not create one
             for launch in tablist:
-                if frame.source == launch.source:
+                if launch.name == frame.source:
                     self.updateLaunch(launch, frame)
                     break
             else:
                 newLaunch = Launch()
-                newLaunch.source = frame.source
+                newLaunch.name = frame.source
+                newLaunch.text = frame.source[8:] #use address low as tab title
                 self.root.ids.launchList.add_widget(newLaunch)
                 self.updateLaunch(newLaunch, frame)
 
