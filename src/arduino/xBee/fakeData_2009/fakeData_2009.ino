@@ -1,5 +1,6 @@
-#include <Printers.h>
+#include <SoftwareSerial.h>
 #include <XBee.h>
+#include <Printers.h>
 
 // Simplified version for arduino 2009
 
@@ -11,17 +12,18 @@ float HEI = 356;
 #define DEST_LOW 0x0
 #define DEST_HI  0x0
 
-//Global xbee handle
+//Global xbee and serial handle
 XBee xbee = XBee();
+SoftwareSerial mySerial(10, 11); // RX, TX
 
 void setup()
 {
   // Serial setup
-  Serial.begin(9600);
-  while (!Serial) continue;
+  mySerial.begin(9600);
+  while (!mySerial) continue;
 
   // xBee API setup
-  xbee.setSerial(Serial);
+  xbee.setSerial(mySerial);
 }
 
 void loop() {
@@ -29,7 +31,7 @@ void loop() {
   HEI += 2;
 
   // Construct json by hand
-  String json = String( "{ID:'TEST_PLANE','IAS':" + String(IAS) + ",'HEI':" + String(HEI) + "}" );
+  String json = String( "{\"IAS\":" + String(IAS) + ",\"HEI\":" + String(HEI) + "}" );
 
   uint8_t payload[json.length() + 1]; //The +1 is there because the string is null terminated 
   json.toCharArray(payload, json.length() + 1); 

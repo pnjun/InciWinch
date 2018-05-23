@@ -38,25 +38,45 @@
     BoxLayout:
         orientation: 'vertical'
         MDLabel:
+            size_hint_y: 0.1
             id: launchTitle
-            font_style: 'Title'
+            font_style: 'Display1'
             theme_text_color: 'Primary'
             text: "Launch data here"
             halign: 'center'
 
-        MDLabel:
-            id: IASDisplay
-            font_style: 'Display3'
-            theme_text_color: 'Primary'
-            text: "IAS here"
-            halign: 'center'
+        BoxLayout
+            size_hint_y: 0.9
+            orientation: 'horizontal'
 
-        MDLabel:
-            id: HeightDisplay
-            font_style: 'Display3'
-            theme_text_color: 'Primary'
-            text: "Height here"
-            halign: 'center'
+            BoxLayout:
+                size_hint_x: 0.6
+                id: GraphDisplay
+
+            BoxLayout:
+                size_hint_x: 0.4
+                orientation: 'vertical'
+
+                MDLabel:
+                    id: TimeDisplay
+                    font_style: 'Title'
+                    theme_text_color: 'Primary'
+                    text: "Timestamp"
+                    halign: 'center'
+
+                MDLabel:
+                    id: IASDisplay
+                    font_style: 'Display3'
+                    theme_text_color: 'Primary'
+                    text: "IAS here"
+                    halign: 'center'
+
+                MDLabel:
+                    id: HeightDisplay
+                    font_style: 'Display3'
+                    theme_text_color: 'Primary'
+                    text: "Height here"
+                    halign: 'center'
 
 
 NavigationLayout:
@@ -96,11 +116,11 @@ NavigationLayout:
 
                     Launch:
                         name: 'asf'
-                        text: 'fakeLaunch'
+                        text: 'fakeTab'
 
                     Launch:
                         name: 'asf2'
-                        text: 'fakeLaunch2'
+                        text: 'fakeTab'
 
 
             Screen:
