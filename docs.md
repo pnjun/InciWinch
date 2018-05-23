@@ -4,11 +4,9 @@
 * Winch side xBee must be configured as Coordinator, with API mode enabled (no escaping - mode 1)
 * Plane side xBees are either routers or endpoints, with API mode enabled (with escaping - mode 2). DH and DL must either be 0 or set to the Coordinator addresses
 
-# Python dependencies:
+# Server side dependencies:
 
 * Python3
-* kivy
+* Python modukes: kivy / matplotlib / six / python-xBee (https://github.com/niolabs/python-xbee)
 * kivyMD
-* python-xBee (https://github.com/niolabs/python-xbee)
-* matplotlib
 * kivy-garden.matplotlib
