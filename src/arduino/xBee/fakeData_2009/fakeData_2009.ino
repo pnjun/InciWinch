@@ -5,8 +5,8 @@
 // Simplified version for arduino 2009
 
 //Start values for fake data (speed&height)
-float IAS = 70;
-float HEI = 356;
+float IAS = 10;
+float HEI = 10;
 
 //Destination address (set to zero since we want to talk to the PAN coordinator)
 #define DEST_LOW 0x0
@@ -42,5 +42,5 @@ void loop() {
   xbee.send(zbTx);
  
   // Wait for next cycle
-  delay(500);
+  delay(1000);
 }

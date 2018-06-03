@@ -35,7 +35,7 @@ class InciWinchApp(App):
 
     def on_start(self):
         try:
-            self.radio = RadioHandler("/dev/tty.usbserial-DN03FTBY", self.radioCallback, fakeData=True)
+            self.radio = RadioHandler("/dev/tty.usbserial-DN03FTBY", self.radioCallback, fakeData=False)
         except SerialException:
             self.radio = None
 
@@ -56,10 +56,15 @@ class InciWinchApp(App):
         speeds = [f.IAS for f in launch.frames]
         heights = [f.height for f in launch.frames]
 
+        print((frame.time - startTime).total_seconds(), frame.IAS, frame.height)
+
         launch.speedLine.set_xdata(times)
         launch.speedLine.set_ydata(speeds)
         launch.heightLine.set_xdata(times)
         launch.heightLine.set_ydata(heights)
+        launch.speedAx.set_xlim(times[-1] - GRAPH_MAXT, times[-1])
+
+
 
         launch.figure.canvas.draw()
 
@@ -84,7 +89,6 @@ class InciWinchApp(App):
         launch.figure = plt.figure()
 
         launch.speedAx = launch.figure.add_subplot(111)
-        launch.speedAx.set_xlim(0, GRAPH_MAXT)
         launch.speedAx.set_ylim(0, GRAPH_MAXSPEED)
         launch.speedAx.set_xlabel('time [s]')
         launch.speedAx.set_ylabel('speed [km/h]', color='tab:blue' ,size='large')
