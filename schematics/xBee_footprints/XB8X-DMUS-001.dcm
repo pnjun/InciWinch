@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP XB8X-DMUS-001
+D RF Modules XBee SX 868, 25mW DigiMesh, U.FL
+K
+F https://www.digi.com/pdf/ds_xbee-sx-868.pdf
+$ENDCMP
+#
+#End Doc Library

@@ -50,6 +50,8 @@ Wire Wire Line
 Wire Wire Line
 	3800 3700 3600 3700
 Wire Wire Line
+	3600 3700 3600 2100
+Wire Wire Line
 	3800 3900 3400 3900
 Wire Wire Line
 	3400 3900 3400 1900
@@ -89,20 +91,31 @@ $EndComp
 $Comp
 L Conn_01x02 J1
 U 1 1 5B13EEDB
-P 3700 4900
-F 0 "J1" H 3700 5000 50  0000 C CNN
-F 1 "Power In" H 3700 4700 50  0000 C CNN
-F 2 "Socket_Strips:Socket_Strip_Straight_1x02_Pitch2.54mm" H 3700 4900 50  0001 C CNN
-F 3 "" H 3700 4900 50  0001 C CNN
-	1    3700 4900
+P 3650 4900
+F 0 "J1" H 3650 5000 50  0000 C CNN
+F 1 "Power In" H 3650 4700 50  0000 C CNN
+F 2 "Socket_Strips:Socket_Strip_Straight_1x02_Pitch2.54mm" H 3650 4900 50  0001 C CNN
+F 3 "" H 3650 4900 50  0001 C CNN
+	1    3650 4900
 	0    1    1    0   
 $EndComp
 Wire Wire Line
+	3800 4100 3650 4100
+Wire Wire Line
+	3650 4100 3650 4700
+Wire Wire Line
+	3800 3800 3550 3800
+Wire Wire Line
+	3550 3800 3550 4700
+Wire Wire Line
 	7100 2400 7100 4700
+Wire Wire Line
+	3550 4400 10300 4400
 Wire Wire Line
 	10300 4400 10300 3900
 Wire Wire Line
 	10300 3900 10100 3900
+Connection ~ 3550 4400
 Wire Wire Line
 	7200 2300 7200 4700
 Wire Wire Line
@@ -150,17 +163,4 @@ $EndComp
 Wire Wire Line
 	6650 4700 6650 3200
 Connection ~ 6650 3200
-Wire Wire Line
-	3800 4100 3700 4100
-Wire Wire Line
-	3700 4100 3700 4700
-Wire Wire Line
-	3600 2100 3600 4700
-Wire Wire Line
-	3600 3800 3800 3800
-Wire Wire Line
-	10300 4400 3600 4400
-Connection ~ 3600 4400
-Connection ~ 3600 3700
-Connection ~ 3600 3800
 $EndSCHEMATC

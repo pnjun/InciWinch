@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name XB8X-DMUS-001)(type Legacy)(uri "$(KIPRJMOD)/xBee_footprints/XB8X-DMUS-001.mod")(options "")(descr ""))
+)
