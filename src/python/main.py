@@ -27,7 +27,7 @@ class InciWinchApp(App):
 
     def on_start(self):
         try:
-            self.radio = RadioHandler("/dev/tty.usbserial-DN03FTBY", self.radioCallback, fakeData=True)
+            self.radio = RadioHandler("/dev/cu.wchusbserialfa1430", self.radioCallback, fakeData=False)
         except SerialException:
             self.radio = None
 
