@@ -59,16 +59,20 @@ class RadioHandler:
 
     def _recvCallback(self, rawData):
         ''' Reads data from xBee, formats the data and calls GUI '''
-        source = rawData['source_addr_long']
-        payload = json.loads( rawData['rf_data'].decode('ascii') )
+        try:
+            source = rawData['source_addr_long']
+            payload = json.loads( rawData['rf_data'].decode('ascii') )
 
-        # This is here to explicitly decouple JSON naming convention
-        # from python internal variable names
-        data = {}
-        data['source'] = binascii.hexlify( source ).decode('ascii').upper()
-        data['time'] = datetime.now()
-        data['IAS'] = payload.pop('IAS')
-        data['height'] = payload.pop('HEI')
+            # This is here to explicitly decouple JSON naming convention
+            # from python internal variable names
+            data = {}
+            data['source'] = binascii.hexlify( source ).decode('ascii').upper()
+            data['time'] = datetime.now()
+            data['IAS'] = payload.pop('IAS')
+            data['height'] = payload.pop('HEI')
+        except Exception as e:
+            print("Could not parse frame:")
+            print(e)
 
         # Turns a dictionary into a namespace
         self.callback(SimpleNamespace(**data))
