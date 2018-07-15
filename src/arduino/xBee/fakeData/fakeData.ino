@@ -7,11 +7,8 @@ float IAS = 10;
 float HEI = 10;
 
 //Destination address 
-//#define DEST_LOW 0x0013A200
-//#define DEST_HI  0x417FE5ED
-
-#define DEST_LOW 0x0
-#define DEST_HI  0x0000FFFF
+#define DEST_HI   0x0013A200
+#define DEST_LOW  0x417FE5ED
 
 //Global xbee and serial handle
 XBee xbee = XBee();
@@ -27,15 +24,17 @@ void setup()
   //while (!Serial) continue;
 
   // xBee API setup
-  xbee.setSerial(Serial);
+  xbee.setSerial(mySerial);
 
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
-void loop() {
+void loop() {  
+  digitalWrite(LED_BUILTIN, HIGH);
+  
   IAS += 0.4;
   HEI += 2;
-  digitalWrite(LED_BUILTIN, HIGH);
+
   // Construct json by hand
   String json = String( "{\"IAS\":" + String(IAS) + ",\"HEI\":" + String(HEI) + "}" );
 
@@ -43,10 +42,10 @@ void loop() {
   json.toCharArray(payload, json.length() + 1); 
 
   // Send data
-  XBeeAddress64 addr64 = XBeeAddress64(DEST_LOW, DEST_HI);
+  XBeeAddress64 addr64 = XBeeAddress64(DEST_HI, DEST_LOW);
   ZBTxRequest zbTx = ZBTxRequest(addr64, payload, json.length());
   xbee.send(zbTx);
+  
   digitalWrite(LED_BUILTIN, LOW);
-  // Wait for next cycle
   delay(1000);
 }
