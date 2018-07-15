@@ -1,8 +1,6 @@
 PLANE SIDE:
 * Arduino
 * Power supply
-* Understand LX RS232 Connection Protocol
-
 
 NMEA:
 LX setup: page 19 of LX 5000 manual
@@ -20,15 +18,6 @@ WINCH SIDE:
 RADIO:
 xBee product list:
 https://www.digi.com/pdf/chart_xbee_rf_features.pdf
-
-xBee to buy:
-https://www.mouser.de/productdetail/?qs=3VJ0tGt%252bi1yn7YuDTTgmmg==
-
-xBee introduction (french):
-http://jeromeabel.net/ressources/xbee-arduino
-
-xBee star network arduino tutorial:
-http://reso-nance.org/wiki/materiel/xbee/star/en
 
 xBee libraries (arduino and python):
 http://docs.digi.com/display/XBeeArduinoCodingPlatform/Using+a+library+with+XBees
